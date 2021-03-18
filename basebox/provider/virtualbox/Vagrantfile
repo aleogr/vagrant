@@ -1,0 +1,20 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.provider :virtualbox do |virtualbox|
+      virtualbox.gui  = true
+      virtualbox.customize [
+          'modifyvm', :id,
+          '--clipboard', 'bidirectional',
+          '--draganddrop', 'bidirectional',
+          '--graphicscontroller', 'vboxsvga',
+          '--vram', 64,
+          '--memory', 8192,
+          '--cpus', 2
+      ]
+      virtualbox.customize [
+        'setextradata', :id,
+        "VBoxInternal2/EfiGraphicsResolution", '1920x1440'
+      ]
+  end
+
+end

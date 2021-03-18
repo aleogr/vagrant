@@ -1,0 +1,14 @@
+require_relative 'Settings'
+
+Vagrant.configure('2') do |config|
+
+  config.vm.box = 'debian/contrib-buster64'
+  config.vagrant.plugins = PLUGINS
+
+end
+
+VagrantLoad MACHINES, 'machine/'
+
+VagrantLoad PROVIDERS, 'provider/'
+
+VagrantLoad PROVISIONERS, 'provisioner/'

@@ -1,0 +1,12 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Install Nautilus file explorer
+      apt:
+        name: nautilus
+        state: latest
+        install_recommends: yes
+  roles:
+    - role: darkwizard242.tilix
+      force: yes
+    - role: manala.vim

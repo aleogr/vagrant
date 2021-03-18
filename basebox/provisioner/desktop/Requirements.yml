@@ -1,0 +1,4 @@
+roles:
+  - name: gantsign.keyboard
+  - name: robertdebock.locale
+  - name: robertdebock.gnome

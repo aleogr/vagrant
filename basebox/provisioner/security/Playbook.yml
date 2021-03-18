@@ -1,0 +1,13 @@
+- hosts: all
+  become: true
+
+  vars:
+    password: aleogr
+
+  tasks:
+    - name: Add the user 'aleogr'
+      user:
+        name: aleogr
+        password: "{{ password | password_hash('sha512') }}"
+        comment: Alexandre Ogrodovski
+        state: present

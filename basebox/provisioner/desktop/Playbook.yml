@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+
+  roles:
+    - role: robertdebock.gnome
+      force: yes
+    - role: gantsign.keyboard
+      force: yes
+      vars:
+        keyboard_model: abnt2
+        keyboard_layout: br
+    - role: robertdebock.locale
+      force: yes
+      vars:
+        locale_timezone: America/Sao_Paulo
+        locale_lang: pt_BR.UTF-8
