@@ -6,7 +6,8 @@ MACHINES = [
 ]
 
 PROVIDERS = [
-  'virtualbox'
+  'virtualbox',
+  'libvirt'
 ]
 
 PROVISIONERS = [
